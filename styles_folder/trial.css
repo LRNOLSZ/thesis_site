@@ -1,0 +1,8 @@
+.cart_btn {
+  background-color: var(--primary-color1);
+  border: 2px solid var(--accent-color3);
+}
+.cart_btn:hover {
+  background-color: var(--primary-color1);
+  border: 2px solid var(--secondary-color2);
+}

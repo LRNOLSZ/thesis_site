@@ -1,0 +1,50 @@
+/* parent */
+
+/* navbar */
+/* .title {
+  position: fixed;
+} */
+
+.bidy {
+  margin-top: 30px;
+}
+
+.paren0 {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  background-color: blue;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px 20px;
+
+  /* Apply transition to all properties */
+}
+
+.content_function {
+  height: 200px;
+  width: 200px;
+  background-color: pink;
+  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* {
+  transition-property: all;
+  transition-duration: 0.3s;
+} */
+
+.content_function:hover {
+  transform: scale(1.2);
+  color: aqua;
+  /* font-size: 35px; */
+}
+
+@media (max-width: 1082px) {
+  .content_function {
+    flex-grow: 1;
+    margin: 5px 10px;
+    justify-content: center;
+  }
+}
