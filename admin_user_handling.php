@@ -27,10 +27,22 @@ include("functions.php");
   <!-- Custom CSS -->
   <link rel="stylesheet" href="testing_admin.css" />
   <link rel="stylesheet" href="styles_folder/admin_user_handling.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <style>
   .header {
     color: red;
+  }
+
+  .tb {
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+  }
+
+  .fas {
+    margin: 0 15px;
   }
 </style>
 
@@ -91,8 +103,33 @@ include("functions.php");
 
   <div class="main-content">
     <div id="home" class="content-section">
-      <h1 class="header">User handling</h1>
-      <p>Welcome to the user handling</p>
+      <div class="tb">
+        <h1 class="header">User handling</h1>
+      </div>
+      <div class="tb">
+        <table class="table  rounded">
+          <thead>
+            <tr>
+              <th class="text-center" scope="col">User ID</th>
+              <th class="text-center" scope="col">Username</th>
+              <th class="text-center" scope="col">Role</th>
+              <th class="text-center" scope="col">Action</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-center" scope="row">1</th>
+              <th class="text-center" scope="row">1</th>
+              <td class="text-center" class="text-center">user/admin</td>
+              <td class="text-center"><i class="fas fa-edit"></i><i class="fas fa-trash"></i></td>
+
+            </tr>
+
+
+          </tbody>
+        </table>
+      </div>
 
     </div>
 
@@ -105,6 +142,8 @@ include("functions.php");
         sidebar1.classList.toggle("active");
       };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 
 </html>
