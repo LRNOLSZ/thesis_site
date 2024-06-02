@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         // var_dump($_SESSION);
         // die();
         if ($user_data['role'] === 'admin') {
-          header("Location: admin.php");
+          header("Location: testing_admin.php");
         } else {
           header("Location: user.php");
         }
@@ -46,83 +46,79 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles_folder/STYLE.CSS" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles_folder/STYLE.CSS" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <script>
+  <script>
     function openRegisterPage() {
-        // Redirect to register.php
-        window.location.href = "register.php";
+      // Redirect to register.php
+      window.location.href = "register.php";
     }
-    </script>
+  </script>
 
-    <style>
+  <style>
     .error-message {
-        color: red;
-        margin-top: 10px;
+      color: red;
+      margin-top: 10px;
     }
-    </style>
+  </style>
 </head>
 
 <body>
-    <div class="image-box">
-        <img src="IMAGES/bg1.jpg" id="home_page_bg" class="" alt="" />
-    </div>
+  <div class="image-box">
+    <img src="IMAGES/bg1.jpg" id="home_page_bg" class="" alt="" />
+  </div>
 
-    <!-- text area -->
-    <!-- <section id="credentials"> -->
-    <div class="login-box">
-        <h2>Login</h2>
-        <form method="POST" action="">
-            <div class="user-box">
-                <input type="text" name="username" required="">
-                <label>Username</label>
-            </div>
-            <div class="user-box">
-                <input type="password" name="password" required="">
-                <label>Password</label>
-            </div>
-            <div class="butons">
-                <button class="login-button">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Sign in
-                </button>
-                <button class="register-button login-button" onclick="openRegisterPage()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Register
-                </button>
-            </div>
-        </form>
-        <?php if (isset($error_message)) : ?>
-        <div class="error-message"><?php echo $error_message; ?></div>
-        <?php endif; ?>
-    </div>
-    <!-- </section> -->
+  <!-- text area -->
+  <!-- <section id="credentials"> -->
+  <div class="login-box">
+    <h2>Login</h2>
+    <form method="POST" action="">
+      <div class="user-box">
+        <input type="text" name="username" required="">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" required="">
+        <label>Password</label>
+      </div>
+      <div class="butons">
+        <button class="login-button">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Sign in
+        </button>
+        <button class="register-button login-button" onclick="openRegisterPage()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Register
+        </button>
+      </div>
+    </form>
+    <?php if (isset($error_message)) : ?>
+      <div class="error-message"><?php echo $error_message; ?></div>
+    <?php endif; ?>
+  </div>
+  <!-- </section> -->
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
-    </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
