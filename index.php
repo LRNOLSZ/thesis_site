@@ -18,13 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       $storedHashedPassword = $user_data['password'];
       if (password_verify($password, $storedHashedPassword)) {
         // Password is correct, proceed with login
+        session_unset();
         $_SESSION['user_id'] = $user_data['ID'];
+        $_SESSION['role']  = $user_data['role'];
         // var_dump($_SESSION);
         // die();
         if ($user_data['role'] === 'admin') {
           header("Location: testing_admin.php");
+        } else if (($user_data['role'] === 'cashier')) {
+          header("Location: cashier.php");
         } else {
-          header("Location: user.php");
+          header("Location: user3.php");
         }
         die;
       } else {

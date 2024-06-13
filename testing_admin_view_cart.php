@@ -109,7 +109,9 @@ if (isset($_GET['delete_all'])) {
       justify-content: center;
       background-color: rgba(15, 67, 126, 0.445);
       padding: 10px;
-      margin: 10px 370px;
+      margin-top: 1rem;
+    margin-inline: auto;
+    width: min(300px, 100%);
       border-radius: 5px;
     }
   </style>
@@ -119,33 +121,9 @@ if (isset($_GET['delete_all'])) {
 <body>
 
   <!-- Navigation bar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler na_btn" type="button" style="border: none;" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="admin_settings.php">Add Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="admin_settings_viewproducts.php">View Products</a>
-          </li>
-          <li class="nav-item  ms-auto">
-            <a class="nav-link active" aria-current="page" href="admin_shop.php">Shop</a>
-          </li>
-          <li class="nav-item ms-auto">
-            <?php
-            $select_product = mysqli_query($con, "SELECT * FROM cart") or die("query failed");
-            $row_count = mysqli_num_rows($select_product);
-            ?>
-            <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-cart-shopping"></i><span><sup><?php echo $row_count; ?></sup></span></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php
+        require_once './components/nav_bar.php';
+        ?>
 
 
   <div class="hoo">

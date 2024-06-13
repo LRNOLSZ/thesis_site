@@ -1,8 +1,8 @@
 :root {
-  --primary-color1: #6bf526; /* Blue */
-  --secondary-color2: #6eb54a; /* Gray */
-  --accent-color3: #5b754d; /* Yellow */
-  --primary-color4: #323630;
+  --primary-color1: #D9985F; /* Blue */
+  --secondary-color2: #91B7D9; /* Gray */
+   /* Yellow */
+  --primary-color4: #454743;
 }
 
 /* fa icons */
@@ -11,6 +11,7 @@
 }
 body {
   background-color: var(--secondary-color2);
+  margin: 0;
 }
 
 /*                               heading text                                       */
@@ -48,7 +49,7 @@ body {
   border-bottom: 2px solid white;
 }
 .li_bor {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid rgb(236, 233, 233);
 }
 
 /*                                  carousel                                  */
@@ -103,8 +104,8 @@ body {
 }
 
 .btn_sig {
-  background-color: var(--secondary-color2);
-  border: 2px solid var(--secondary-color2);
+  background-color: var(--primary-color4);
+  border: 2px solid var(--primary-color4);
 }
 .btn_sig:hover {
   background-color: var(--primary-color1);
@@ -174,7 +175,7 @@ body {
 /* footer */
 #footer {
   padding-top: 7%;
-  background-color: var(--secondary-color2);
+  background-color: var(--primary-color1);
 }
 .footer-brand-logo {
   margin: 20px 10px 30px;

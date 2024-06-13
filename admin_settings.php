@@ -183,18 +183,7 @@ if (isset($_POST['add_product'])) {
         </a>
         <span class="tooltip2">settings</span>
       </li>
-      <li>
-        <a href="#" data-content="orders">
-          <i class="bx bx-food-menu"></i><span class="nav-item">orders</span>
-        </a>
-        <span class="tooltip2">orders</span>
-      </li>
-      <li>
-        <a href="#" data-content="contacts">
-          <i class="bx bx-headphone"></i><span class="nav-item">contacts</span>
-        </a>
-        <span class="tooltip2">contacts</span>
-      </li>
+
       <li>
         <a href="#" data-content="logout">
           <i class="bx bx-exit"></i><span class="nav-item">logout</span>
@@ -207,39 +196,9 @@ if (isset($_POST['add_product'])) {
   <div class="main-content">
     <div id=" home" class="content-section">
       <section>
-        <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid">
-            <button class="navbar-toggler  na_btn ms-auto" type="button" style="border: none;" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarTogglerDemo01">
-
-              <ul class="navbar-nav    mb-2 mb-lg-0">
-                <li class="nav-item  ms-auto">
-                  <a class="nav-link active" aria-current="page" href="#">Add Products</a>
-                </li>
-                <li class="nav-item  ms-auto">
-                  <a class="nav-link active" aria-current="page" href="admin_settings_viewproducts.php">View Products</a>
-                </li>
-                <li class="nav-item  ms-auto">
-                  <a class="nav-link active" aria-current="page" href="admin_shop.php">Shop</a>
-                </li>
-                <li class="nav-item  ms-auto">
-                  <!-- php -->
-                  <?php
-                  $select_product = mysqli_query($con, "SELECT * from cart ") or die("query failed");
-                  $row_count = mysqli_num_rows($select_product);
-
-                  ?>
-                  <a class="nav-link active" aria-current="page" href="testing_admin_view_cart.php"><i class="fa-solid fa-cart-shopping"></i><span><sup><?php echo $row_count; ?></sup></span></a>
-                </li>
-
-
-              </ul>
-
-            </div>
-          </div>
-        </nav>
+        <?php
+        require_once './components/nav_bar.php';
+        ?>
       </section>
       <!-- <section> -->
       <!-- <div class="heading1">
@@ -247,7 +206,7 @@ if (isset($_POST['add_product'])) {
         <form action="" class="add_product boxi">
           <input type="text" placeholder="enter product name" class="input_feild" required>
           <input type="number" min="0" placeholder="enter product price" class="input_feild" required>
-          <input type="file" class="input_feild" required>
+          <input type="file" class="input_feild" required>inser
           <input type="submit" class="submit-btn" value="Add Product">
         </form>ff
       </div> -->
