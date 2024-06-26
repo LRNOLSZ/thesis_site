@@ -352,6 +352,49 @@ $tables = $con->query("SELECT * FROM tables");
           <?php endwhile; ?>
         </table>
       </div>
+       <h2 class="text-center">comment</h2>
+      <!-- comments -->
+      <table class="table  ">
+        <?php
+
+        $select_cart_products = mysqli_query($con, "SELECT * FROM comments");
+
+
+        if (mysqli_num_rows($select_cart_products) > 0) {
+
+          echo " <thead class='text-center  align-middle'>
+<tr>
+    <th scope='col'>id</th>
+    <th scope='col'>user id</th>
+    <th scope='col'>comment</th>
+   
+
+</tr>
+</thead>
+<tbody class='text-center align-middle'>";
+
+          $si_no = 1;
+
+          while ($fetch_cart_products = mysqli_fetch_assoc($select_cart_products)) {
+        ?>
+
+            <tr id="cart_item<?php echo $fetch_cart_products['user_id']; ?>">
+              <th scope="row"><?php echo $si_no++; ?></th>
+              <td><?php echo $fetch_cart_products['user_id']; ?></td>
+              <td><?php echo $fetch_cart_products['comment']; ?></td>
+              
+
+              
+
+
+            </tr>
+
+        <?php
+          }
+        }
+        ?>
+      </table>
+      </table>
 
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

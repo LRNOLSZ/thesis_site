@@ -50,7 +50,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>user</title>
 
   <!-- boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -128,6 +128,7 @@ if (isset($_POST['add_to_cart'])) {
       flex-wrap: wrap;
       justify-content: center;
       padding: 0 35px;
+      gap: 5em;
     }
 
     .ending a {
@@ -170,9 +171,7 @@ if (isset($_POST['add_to_cart'])) {
             <li class="nav-item li_bor ">
               <a class="nav-link active" href="#desert">Desert</a>
             </li>
-            <li class="nav-item li_bor ">
-              <a class="nav-link active" href="#testimonial">Testimonial</a>
-            </li>
+            
             <li class="nav-item li_bor ">
               <a class="nav-link active" href="#contacts">Contacts</a>
             </li>
@@ -181,15 +180,19 @@ if (isset($_POST['add_to_cart'])) {
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center ">
             <li class="nav-item  ">
 
-              <a class="nav-link active" href="logout.php" alt="shop"><i class="fa-solid fa-right-from-bracket"></i></a>
+              <a class="nav-link active" href="logout.php" alt="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
             </li>
             <li class="nav-item  ">
 
-              <a class="nav-link active" href="fp.php" alt="shop"><i class="fa-solid fa-key"></i></i></a>
+              <a class="nav-link active" href="fp.php" alt="reset password"><i class="fa-solid fa-key"></i></i></a>
             </li>
             <li class="nav-item  ">
 
               <a class="nav-link active" href="user3.php" alt="shop"><i class="fa-solid fa-shop"></i></a>
+            </li>
+            <li class="nav-item  ">
+
+              <a class="nav-link active" href="comment.php" alt="comment"><i class="fa fa-comment"></i></a>
             </li>
             <li class="nav-item  ">
               <!-- php -->
@@ -278,7 +281,7 @@ if (isset($_POST['add_to_cart'])) {
           <form action="" method="post">
             <div class="edit_form1">
               <div class="igg">
-                <img src="<?php echo $row['img_url']; ?>" class="im img-fluid" alt="" />
+                <img src="<?php echo "IMAGES/".$row['img_url']; ?>" class="im img-fluid" alt="" />
               </div>
               <div class=" contt">
                 <div class="ce">
@@ -401,7 +404,7 @@ if (isset($_POST['add_to_cart'])) {
                 </div>
               </div>
               <div class="igg">
-                <img src="<?php echo $row2['img_url']; ?>" class="im img-fluid" alt="" />
+                <img src="<?php echo"IMAGES/".$row2['img_url']; ?>" class="im img-fluid" alt="" />
               </div>
             </div>
 
@@ -461,54 +464,9 @@ if (isset($_POST['add_to_cart'])) {
   <!-- testimonial -->
 
 
-  <section id="testimonial">
+  
 
-    <?php
-    $sql = "SELECT * FROM testimonial";
-    $result = mysqli_query($con, $sql);
-    ?>
-
-    <!-- // Fetch carousel items from the database -->
-    <div id="carouselTestimonial" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <?php
-        // Check if there are testimonial items in the database
-        if (mysqli_num_rows($result) > 0) {
-          $active = true; // Set the first item as active
-          // Output data of each testimonial item
-          while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-            <div class="carousel-item carousel-inner <?php echo $active ? 'active' : ''; ?>">
-              <img src="<?php echo $row['img_url']; ?>" class="d-block w-100 carou_img" alt="Background Image">
-              <div class="carousel-caption d-md-block">
-                <p class="c_text montserrat-carousel text-fluid">
-                  <?php echo $row['comment']; ?>
-                </p>
-                <h5 class="source-code-pro-carousel"><?php echo $row['name']; ?></h5>
-                <!-- Assuming you also want to display a profile picture -->
-                <img src="<?php echo $row['profile_url']; ?>" class="testimonial-image" alt="Profile Picture">
-              </div>
-            </div>
-        <?php
-            // After the first item, set $active to false
-            $active = false;
-          }
-        } else {
-          echo "No testimonials available.";
-        }
-        ?>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonial" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonial" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-
-  </section>
+  
 
   <!-- CONTACTS -->
   <section id="contacts">

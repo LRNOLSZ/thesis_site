@@ -5,7 +5,7 @@
         </button>
         <div class=" ms-auto collapse navbar-collapse " id="navbarTogglerDemo01">
 
-            <ul class="navbar-nav    mb-2 mb-lg-0">
+            <ul class="navbar-nav   ms-auto mb-2 mb-lg-0">
 
                 <a class="nav-link active" aria-current="page" href="user3.php">Shop</a>
                 </li>

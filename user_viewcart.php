@@ -76,6 +76,7 @@ if (isset($_GET['delete_all'])) {
         body {
             display: flex;
             flex-direction: column;
+            background-color:#91B7D9 ;
         }
 
         .navbar {
@@ -94,6 +95,7 @@ if (isset($_GET['delete_all'])) {
             height: 90px;
             align-items: center;
             padding: 0 20px;
+            
         }
 
         .delete_bt {
@@ -116,12 +118,13 @@ if (isset($_GET['delete_all'])) {
         .display_m {
             display: flex;
             justify-content: center;
-            background-color: rgba(15, 67, 126, 0.445);
+            background-color:#454743;
             padding: 10px;
             margin-top: 1rem;
             margin-inline: auto;
             width: min(300px, 100%);
             border-radius: 5px;
+            color:white;
         }
     </style>
 
@@ -205,9 +208,9 @@ if (isset($_GET['delete_all'])) {
         if ($grand_total > 0) {
         ?>
             <div class="d_buttons">
-                <div class="d_B"><button class="btn btn-secondary" onclick="window.location.href='shopping_page.php'">Continue Shopping</button></div>
+                <div class="d_B"><button class="btn btn-secondary" onclick="window.location.href='user3.php'">Continue Shopping</button></div>
                 <div class="d_B"><button class="btn btn-secondary">Grand Total: $<?php echo number_format($grand_total, 2); ?></button></div>
-                <div class="d_B"><button class="btn btn-secondary" onclick="window.location.href='checkout_page.php'">Proceed to Checkout</button></div>
+                <div class="d_B"><button class="btn btn-secondary" onclick="window.location.href='index.php'">Proceed to Checkout</button></div>
             </div>
 
         <?php
@@ -216,59 +219,6 @@ if (isset($_GET['delete_all'])) {
     </div>
     <!-- histry -->
 
-    <table class="table">
-        <?php
-        $select_cart_products = mysqli_query($con, "SELECT * FROM cart WHERE user_id = $user_id and status ='complete'");
-
-
-        if (mysqli_num_rows($select_cart_products) > 0) {
-            echo '<thead class="table-secondary">
-                        <tr>
-                            <th scope="col" class="text-center">SI No</th>
-                            <th scope="col" class="text-center">Product Image</th>
-                            <th scope="col" class="text-center">Product Name</th>
-                            <th scope="col" class="text-center">Product Price</th>
-                            <th scope="col" class="text-center">Product Description</th>
-                            <th scope="col" class="text-center">Product Category</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-center">Total Price</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>';
-
-            $si_no = 1;
-            while ($fetch_cart_products = mysqli_fetch_assoc($select_cart_products)) {
-                if ($fetch_cart_products['status'] == 'complete')
-        ?>
-                <tr>
-                    <th class="text-center" scope="row"><?php echo $si_no++; ?></th>
-                    <td class="text-center"><img src="IMAGES/<?php echo $fetch_cart_products['image']; ?>" alt="" style="width: 50px;"></td>
-                    <td class="text-center"><?php echo $fetch_cart_products['name']; ?></td>
-                    <td class="text-center">$<?php echo $fetch_cart_products['price']; ?></td>
-                    <td class="text-center"><?php echo $fetch_cart_products['description']; ?></td>
-                    <td class="text-center"><?php echo $fetch_cart_products['category']; ?></td>
-                    <form action="" method="post">
-                        <input type="hidden" value="<?php echo $fetch_cart_products['ID']; ?>" name="update_quantity_id">
-                        <td class="text-center hlq">
-                            <?php echo $fetch_cart_products['quantity']; ?>
-
-                        </td>
-                    </form>
-                    <td scope="col" class="text-center"><?php echo $subtotal = number_format($fetch_cart_products['price'] * $fetch_cart_products['quantity']); ?></td>
-
-                </tr>
-        <?php
-
-            }
-            echo '</tbody>';
-        } else {
-            echo '<div class="display_m">
-                        <span>No products in cart</span>
-                      </div>';
-        }
-        ?>
-    </table>
 
 
     <!-- Bootstrap -->

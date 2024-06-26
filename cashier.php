@@ -162,12 +162,15 @@ $total_revenue = $total_revenue_data['total_revenue'];
             justify-content: center;
             margin: 30px;
         }
+        .navbar {
+            background-color:#91B7D9;
+        }
     </style>
 </head>
 
 <body>
     <section id="navbar3">
-        <nav class=" cd navbar navbar-expand-lg bg-body-tertiary">
+        <nav class=" cd navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><i class="bx bx-bowl-rice bx-md"></i><span>RMS</span>
                 </a>
@@ -177,15 +180,15 @@ $total_revenue = $total_revenue_data['total_revenue'];
                 <div class="   collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="cashier.php">Home</a>
+                            <a class="nav-link active" aria-current="page" href="cashier.php"><i class="fa fa-home" aria-hidden="true"></i></a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link " href="tablessetting.php">TABLES</a>
+                            <a class="nav-link " href="tablessetting.php"><i class="fa fa-table" aria-hidden="true"></i> TABLES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="logout.php">logout</a>
+                            <a class="nav-link " href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>logout</a>
                         </li>
                     </ul>
 
